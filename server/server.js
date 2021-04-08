@@ -4,10 +4,6 @@ const express        = require('express');
 const path           = require('path');
 const logger         = require('morgan');
 const bodyParser     = require('body-parser');
-const passport 			 = require("./config/passport");
-const session        = require('express-session'); 
-const config				 = require("./config/extra-config");
-const compression    = require('compression');
 
 // Express settings
 // ================
@@ -26,18 +22,13 @@ app.use(function(req, res, next) {
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-const authCheck = require('./config/middleware/attachAuthenticationStatus');
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(authCheck);
-app.use(compression());
 
 require('./config/databaseImplementation');
 
