@@ -1,0 +1,33 @@
+p {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	}
+	label {
+		color: #2B5EC0;
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	}
+	
+	.checkbox {
+		background-color: #2B5EC0 !important;
+	}
+	
+body {
+	color: white;
+}
+
+#registration-container {
+	margin-top: 20%;
+}
+
+@media (min-width: 768px) {
+  	#registration-container {
+		margin-top: 6%;
+	}
+
+	form {
+		margin-top: 2%;
+	}
+}
+
+.container-page {
+	background: grey;
+}
